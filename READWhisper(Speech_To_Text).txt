@@ -1,0 +1,32 @@
+Here is a step-by-step guide on how to convert speech to text in Python using the Whisper library in PyCharm:
+Installation
+
+Install the Whisper library: Open the terminal in PyCharm and type in the following command to install the Whisper library:
+pip install whisper
+Importing and Creating Function
+
+Import the library: In your Python code, add the following line to import the Whisper library:
+import whisper
+
+Record audio: Use the whisper.record function to record audio. For example, the following code will record 5 seconds of audio and save it as a wav file:
+Program
+1
+audio = whisper.record(duration=5)
+audio.export("recording.wav", format="wav")
+Transcribe the audio: Use the whisper.Transcriber class to transcribe the recorded audio. For example, the following code will transcribe the audio file we just recorded and print the transcribed text:
+2
+transcriber = whisper.Transcriber("recording.wav")
+result = transcriber.transcribe()
+print(result.text)
+(Optional) Customize the transcriber: You can also customize the transcriber to fit your needs. For example, you can set the language, the sample rate, and the key words to transcribe. Here's an example:
+makefile
+3
+transcriber = whisper.Transcriber("recording.wav")
+transcriber.sample_rate = 16000
+transcriber.language = "en-US"
+result = transcriber.transcribe(keywords=["hello", "world"])
+print(result.text)
+And that's it! You have successfully transcribed speech to text in Python using the Whisper library in PyCharm.
+
+
+

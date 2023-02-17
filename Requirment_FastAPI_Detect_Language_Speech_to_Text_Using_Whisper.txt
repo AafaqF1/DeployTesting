@@ -1,0 +1,7 @@
+Install the required libraries:
+In your PyCharm terminal, run the following commands to install the SpeechRecognition, langdetect and fastapi libraries:
+
+Copy code
+pip install SpeechRecognition
+pip install langdetect
+pip install fastapi

@@ -1,0 +1,7 @@
+Installation
+
+Install The Libraries
+pip Install oygame
+pip install gTTs
+
+Import

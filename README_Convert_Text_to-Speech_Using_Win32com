@@ -1,0 +1,30 @@
+
+To convert text to speech using wincl library and save it to an MP3 file, you can use the following steps in Pycharm:
+
+Install the wincl library by running the following command in your terminal:
+Copy code
+pip install wincl and win32com
+Import the wincl library in your Python script.
+
+import comtypes.client
+import wincl
+Initialize the Speaker object from the wincl library.
+
+speaker = wincl.Dispatch("SAPI.SpVoice")
+Set the voice of the speaker object to the desired language using the Voice property.
+ You can use the following code to see the list of available voices and their corresponding language IDs:
+
+fspeak = comtypes.client.CreateObject("SAPI.SpVoice")
+filestream = comtypes.client.CreateObject("SAPI.spFileStream")
+
+To convert the text to speech and save it to an MP3 file, use the SpeakToWaveFile method:
+
+filestream.open("outputwin32com.wav", 3, False)
+speak.AudioOutputStream = filestream
+speak.Speak("Hey I am Aafaq Fazal and i am Working in Datalytice company which is top Data science company in islamabad")
+filestream.close()
+
+This will create an MP3 file named sample_speech.mp3 in the same directory as your Python script.
+The file will contain the speech generated from the text.
+
+
